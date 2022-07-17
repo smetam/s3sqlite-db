@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "s3sqlite-db"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["Smetanin Aleksandr <smetamx@gmail.com>"]
 readme = "README.md"
 homepage = "https://github.com/smetam/s3sqlite-db"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.7"
 databases = {extras = ["aiosqlite"], version = "^0.6.0"}
 boto3 = "^1.24.31"
 

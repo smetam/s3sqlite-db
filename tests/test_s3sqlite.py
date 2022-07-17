@@ -4,7 +4,7 @@ from s3sqlite_db import S3Database, S3DatabaseURL, __version__
 
 
 def test_version():
-    assert __version__ == "0.1.1"
+    assert __version__ == "0.1.2"
 
 
 @pytest.mark.parametrize(
