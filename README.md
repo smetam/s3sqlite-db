@@ -8,7 +8,7 @@ Main purpose for this is use with AWS Lambda, to download sqlite db to Lambda on
 ## Installation
 
 ```console
-$ pip install s3sqlite-databases
+$ pip install s3sqlite-db
 ```
 
 ## Usage
