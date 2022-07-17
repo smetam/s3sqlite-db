@@ -1,4 +1,4 @@
-# Welcome to s3sqlite-databases
+# Welcome to s3sqlite-db
 
 This is an extension to [encode/databases](https://github.com/encode/databases)
 that allows using sqlite database with AWS S3.
