@@ -1,23 +1,22 @@
 [tool.poetry]
-name = "poetry_template"
+name = "s3sqlite-db"
 version = "0.1.0"
 description = ""
-authors = ["Research Computing Service, Imperial College London <rcs-support@imperial.ac.uk>"]
+authors = ["Smetanin Aleksandr <smetamx@gmail.com>"]
 readme = "README.md"
-homepage = "https://github.com/ImperialCollegeLondon/poetry_template"
+homepage = "https://github.com/smetam/s3sqlite-db"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
+databases = {extras = ["aiosqlite"], version = "^0.6.0"}
+boto3 = "^1.24.31"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
-sphinx = "^3.0.4"
-recommonmark = "^0.6.0"
-flake8 = "^3.8.2"
-mypy = "^0.780"
-black = "^19.10b0"
-pre-commit = "^2.4.0"
-pytest-mypy = "^0.6.2"
+flake8 = "^4.0.1"
+isort = "5.10.1"
+black = "^22.6.0"
+pre-commit = "^v2.20.0"
 pytest-cov = "^2.9.0"
 pytest-flake8 = "^1.0.6"
 pytest-mock = "^3.1.1"
@@ -26,8 +25,30 @@ bump2version = "^1.0.0"
 [tool.isort]
 multi_line_output = 3
 include_trailing_comma = true
+line_length = 120
+profile = "black"
+
+[tool.black]
+exclude = '''
+/(
+    .*\.egg-info
+    | .*build
+    | \.eggs
+    | \.git
+    | \.pytest_cache
+    | \.tox
+    | \.venv
+    | \.vscode
+    | dist
+)/
+'''
+preview = true
+include = '\.pyi?$'
+line-length = 120
+target-version = [
+    "py39",
+]
 
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
-

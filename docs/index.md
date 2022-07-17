@@ -1,5 +1,4 @@
 # Welcome to s3sqlite-databases
-![build status](../../workflows/ci/badge.svg)
 
 This is an extension to [encode/databases](https://github.com/encode/databases)
 that allows using sqlite database with AWS S3.
@@ -8,7 +7,7 @@ Main purpose for this is use with AWS Lambda, to download sqlite db to Lambda on
 ## Installation
 
 ```console
-$ pip install s3sqlite-databases
+$ pip install s3sqlite-db
 ```
 
 ## Usage

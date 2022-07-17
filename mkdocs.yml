@@ -1,0 +1,5 @@
+site_name: s3sqlite-db
+repo_name: smetamx/s3sqlite-db
+repo_url: https://github.com/smetam/s3sqlite-db
+theme:
+  name: material
