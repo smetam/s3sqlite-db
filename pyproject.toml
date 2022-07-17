@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "s3sqlite-db"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Smetanin Aleksandr <smetamx@gmail.com>"]
 readme = "README.md"
