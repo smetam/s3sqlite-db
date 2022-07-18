@@ -22,7 +22,7 @@ DATABASE_URL = f's3sqlite://{S3_BUCKET}/{S3_KEY}'
 
 async with S3Database(DATABASE_URL) as db:
     query = table.select()
-    db.fetch_all(query)
+    result = await db.fetch_all(query)
 
 ```
 
@@ -43,6 +43,42 @@ async def startup():
 @app.on_event("shutdown")
 async def shutdown():
     await database.disconnect()
+```
+
+
+## Queries
+
+Both sqlalchemy core and raw queries are supported.
+
+
+### Raw
+
+```Python
+async with S3Database(DATABASE_URL) as db:
+    query = "INSERT INTO users(name, age) VALUES (:name, :age)"
+    values = {"name": "John", "age": 55}
+    await database.execute(query=query, values=values)
+```
+
+### Sqlalchemy
+
+```Python
+import sqlalchemy
+
+metadata = sqlalchemy.MetaData()
+
+
+users = sqlalchemy.Table(
+    "users",
+    metadata,
+    sqlalchemy.Column("name", sqlalchemy.String),
+    sqlalchemy.Column("age", sqlalchemy.Integer),
+)
+
+
+async with S3Database(DATABASE_URL) as db:
+    query = sqlalchemy.delete(users).where(users.c.age == 55)
+    await database.execute(query=query)
 ```
 
 ## Configuration
