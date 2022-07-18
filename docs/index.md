@@ -15,6 +15,9 @@ $ pip install s3sqlite-db
 You can use S3Database as async context manager:
 
 ```Python
+from s3sqlite_db import S3Database
+
+
 S3_BUCKET = 'my-bucket'
 S3_KEY = 'database.sqlite'
 DATABASE_URL = f's3sqlite://{S3_BUCKET}/{S3_KEY}'
@@ -29,6 +32,7 @@ or with async framework like FastAPI:
 
 ```Python
 from fastapi import FastAPI
+from s3sqlite_db import S3Database
 
 
 app = FastAPI()
